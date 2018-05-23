@@ -1,0 +1,48 @@
+git commands are issued in the terminal window (BASH)
+Basic Git Workflow
+1. git init > 2. git add > 3. git commit
+
+1. Working directory
+  - Make changes to files: additions, deletions, modifications
+
+2. Staging Area
+  - Files are ready for commit
+
+3. Repository
+  - Changes are saved to repository as a commit
+
+git status
+  - prints a log of the changes that have occurred in the current version of a project
+git add your_filename
+  - adds a file to the staging area
+git add .
+  - adds all files and directories in the pwd
+
+
+git commit -m "Changes to code comment here"
+  - a good commit message is also written:
+    - in quotation marks
+    - in present tense
+    - in 50 characters or less when using -m
+
+Remote git creation.  github.com
+  - create new Repository
+  - give description
+  - copy quick setup to clipboard
+
+git remote add origin https://github.com/rekot24/sorcerer-s-code.git
+  - origin is an alias for the remote repository for easy future reference
+
+git remote -v
+  - lists all the git remotes and their corresponding URLs
+  - the URL marked "fetch" is the remote repository that git is reading
+    from, and the URL marked "push" is the repository git is writing to
+
+git push -u origin master
+  - git push - informs git that we want to update a remote Repository
+  - origin - refers to the remote repository we are pushing on to github
+  - master - refers to the place where are work lives on our local Repository
+  - -u stands for "upstream". by writing the command with the upstream option
+    we establish a link between the local repo and the remote master branch
+    -u is only used the first time we push to the remote repository
+  - will be prompted for username/password for github

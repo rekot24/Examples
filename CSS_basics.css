@@ -1,0 +1,68 @@
+/* Listed in order of specificity of overriding.
+tag < class < id
+
+selecting elements by tag name
+  <p>this tag would be selected</p>  */
+p {
+  font-family: Arial;
+}
+
+/* selecting elements by class
+  <p class="brand">this tag would be selected</p>  */
+.brand {
+  color: maroon;
+}
+
+/* selecting multiple class names at once and optimize code
+so you can reuse the css in multiple places
+  <h1 class="green bold">select green and bold</h1>
+  <h1 class="blue bold">select blue and bold</h1>  */
+.green {
+  color: green;
+}
+.bold {
+  font-weight: bold;
+}
+.blue {
+  color: blue;
+}
+
+/* selecting by unique id. generally meant for a single use elements
+Should be used sparingly
+  <h1 id="large-title">selected</h1>  */
+#large-title {
+  font-family: cursive;
+  text-transform: capitalize;
+}
+
+/* chaining selectors
+  <h1 class="special">Title</h1>  */
+h1.special {
+  font-family: cursive;
+  text-align: center;
+}
+
+/* nested element selecting
+  <ul class="main-list">
+    <li> ... </li>
+    <li> ... </li>
+  </ul>   */
+.main-list li {
+  color: teal;
+  font-size: 12px;
+}
+
+/* multiple selectors.  Will apply to both h1 and .menu class
+enclose typeface in "quotes" when they consist of more than one word*/
+h1,
+.menu {
+  font-family: "Courier New";
+}
+
+/* assinging background images to elements.  external and relative paths */
+.main-banner {
+  background-image: url("https://www.example.com/image.jpg");
+}
+.main-banner {
+  background-image: url("images/mountains.jpg");
+}
