@@ -1,0 +1,97 @@
+box model diagram https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-4/diagram-boxmodel.svg
+
+Margin
+------
+Border
+------
+Padding
+------
+content
+
+height and width modifies the content cell
+pixels allow you to set the exact size
+p {
+  height: 80px;
+  width: 240px;
+}
+
+Padding is often used to expand the background color and make content look less
+  cramped.  Options listed below.
+p {
+  padding: 10px; adds padding to all 4 sides
+  padding-top: 10px; adds padding to just the top
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding: 25px 50px 75px 100px; shorthand - top, right, bottom, left
+  padding: 25px 50px 75px; shorthand - top=25px right&left=50px bottom=75px
+  padding: 25px 30px; shorthand - top&bottom=25px right&left=30px
+}
+
+Borders Surround an element like a frame around a painting
+  - Width set in pixels or keywords: thin, medium, thick
+  - style 10 different built in styles https://developer.mozilla.org/en-US/docs/Web/CSS/border-style#Values
+  - color 140 built-in color keywords https://developer.mozilla.org/en-US/docs/Web/CSS/color_value
+  Default settings are medium none color, where color is the current color
+  of the element
+p {
+  border: thin solid coral;
+}
+Border Radius can modify the corners of an element so it's not square
+div.container {
+  border-radius: 5px; rounds all 4 corners 5px
+  border-radius: 100%; makes a perfect circle
+}
+
+Margin refers to the space directly outside of the box(border)
+p {
+  margin: 10px; sets all 4 sides - can use shorthand like above in padding
+  margin-top: 5px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+Margin can also be used to center an element using auto keyword. A width must
+  be declared for it to work though
+div {
+  width: 400px;
+  margin: 0 auto;  This will center the element within the 400px width
+}
+Top & Bottom margins collapse but right & left margin do not.  Collapse meaning
+  absorb neighboring margins.  The higher of the 2 becomes the full amount of
+  distance between them.
+
+min-width & max-width are utilized to limit how narrow or how wide an elements
+  box can be sized to.
+min-height & max-height do the same for vertical Values
+p {
+  min-width: 300px;
+  max-width: 600px;
+  min-height: 150px;
+  max-height: 300px;
+}
+
+All of the components of the box model comprise the element's size.  Add all
+  the the px count for the height/width total.  overflow is used to view all
+  of an element that is larger than it's parent's containing area
+p {
+  overflow: scroll; - A scroll bar is added
+  overflow: hidden; - content overflow is hidden
+  overflow: visible; - displays content outside of the containing element
+                        DEFAULT value
+}
+
+Resetting defaults.  Most browsers have default display elements which can make
+  it difficult to design or style a web page. Many developers reset the values
+  at the top of the css file using:
+* {
+  margin: 0;
+  padding: 0;
+}
+
+Visibility settings
+.future {
+  visibility: hidden; hides contents but still leaves empty space where it is
+                        intended to display
+  visibility: none; completely removed from the web page
+}
