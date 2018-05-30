@@ -1,0 +1,30 @@
+Block-level elements create a block the full width of their parent elements,
+  and they prevent other elements from appearing in the same horizontal space.
+  The default position of an element can be changed by setting it's position
+  property with one of 4 values:
+  - static (default)
+  - relative
+  - absolute
+  - fixed
+
+relative | Allows you to position an element relative to its default static
+  position on the web page using 4 available properties. Can be specified in
+  pixels, ems, or percentages. These offset properties will not work if the
+  element's position property is static
+  - top - moves the element down
+  - bottom - moves the element up
+  - left - moves the element right
+  - right - moves the element left
+p {
+  position: relative;
+  top: 20px;
+  left: 50px;
+}
+
+absolute | All other elements on the page will ignore the element and act like
+  it is not present on the page.  The element will be positioned relative to
+  its closest positioned parent element. Can use the 4 properties above.
+
+fixed | remains in a fixed position, regardless of scrolling
+
+z-index | Controls overlap priority with 1 being highest.
