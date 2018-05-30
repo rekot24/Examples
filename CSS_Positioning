@@ -3,12 +3,16 @@ Block-level elements create a block the full width of their parent elements,
   The default position of an element can be changed by setting it's position
   property with one of 4 values:
   - static (default)
-  - relative
-  - absolute
-  - fixed
+  - relative | Allows you to position an element relative to its default static
+      position on the web page using 4 available properties. Can be specified in
+      pixels, ems, or percentages. These offset properties will not work if the
+      element's position property is static
+  - absolute | All other elements on the page will ignore the element and act like
+      it is not present on the page.  The element will be positioned relative to
+      its closest positioned parent element. Can use the 4 properties above.
+  - fixed | remains in a fixed position, regardless of scrolling
 
-relative | Allows you to position an element relative to its default static
-  position on the web page using 4 available properties. Can be specified in
+Offset properties, 4 available properties. Can be specified in
   pixels, ems, or percentages. These offset properties will not work if the
   element's position property is static
   - top - moves the element down
@@ -21,10 +25,29 @@ p {
   left: 50px;
 }
 
-absolute | All other elements on the page will ignore the element and act like
-  it is not present on the page.  The element will be positioned relative to
-  its closest positioned parent element. Can use the 4 properties above.
-
-fixed | remains in a fixed position, regardless of scrolling
-
 z-index | Controls overlap priority with 1 being highest.
+
+Display | 3 properties available.  Inline, block, inline-Block
+  - inline | Browser will render elements on the same line as other inline
+      elements immediately before or after them. Default for a, em, strong.
+      Cannot alter size with height or width properties
+      https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements
+  - block | not displayed on the same line as content around them.  Fills them
+      entire width of the page by default, but width can be set.
+      https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements
+  - inline-block | can appear next to other elements and can have dimensions
+      specified using width & height. images are the best example of this type.
+
+float | can be set to left or right.  must have a width set or won't do anything.
+
+clear | float can be used on multiple elements at once. when multiple elements
+  have different heights they can "bump" into each other and not allow other
+  elements to properly move left or right. clear tells them how to behave when
+  this happens. 4 possible settings:
+  - left | left side of element will not touch any other element within the same
+      containing element.
+  - right | the right side of the element will not touch any other element
+      within the same containing element.
+  - both | neither side of the element will touch any other element within the
+      same containing element.
+  - none | the element can touch either side.
