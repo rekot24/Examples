@@ -2,7 +2,7 @@ Block-level elements create a block the full width of their parent elements,
   and they prevent other elements from appearing in the same horizontal space.
   The default position of an element can be changed by setting it's position
   property with one of 4 values:
-  - static (default)
+  - static (default) ignores z-index
   - relative | Allows you to position an element relative to its default static
       position on the web page using 4 available properties. Can be specified in
       pixels, ems, or percentages. These offset properties will not work if the
@@ -27,13 +27,13 @@ p {
 
 z-index | Controls overlap priority with 1 being highest.
 
-Display | 3 properties available.  Inline, block, inline-Block
+display | 3 properties available.  Inline, block, inline-Block
   - inline | Browser will render elements on the same line as other inline
       elements immediately before or after them. Default for a, em, strong.
       Cannot alter size with height or width properties
       https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements
   - block | not displayed on the same line as content around them.  Fills them
-      entire width of the page by default, but width can be set.
+      entire width of the page by default, but width & height can be set.
       https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements
   - inline-block | can appear next to other elements and can have dimensions
       specified using width & height. images are the best example of this type.
