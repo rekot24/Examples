@@ -5,8 +5,7 @@ to create a flex container, it's display property must be set to flex.
   display: flex;  or
   display: inline-flex;
 
-to position items from left to right, use the property: justify-content
-  There are 5 options for justify-content:
+justify-content | position items from left to right. There are 5 properties:
   - flex-start | all items will be positioned in order starting, from the left
       of the parent container, with no extra space between or before them.
   - flex-end | all items will be positioned in order, with the last item
@@ -19,7 +18,7 @@ to position items from left to right, use the property: justify-content
   - space-between | items will be positioned with equal space between them, but
       no extra space before the first or after the last elements.
 
-vertical positioning is done with align-items property. there are also 5 options:
+align-items | adjust vertical positioning. there are also 5 options:
   - flex-start | all elements will be positioned at the top of the parent
       container.
   - flex-end | all elements will be positioned at the bottom of the parent
@@ -33,17 +32,16 @@ vertical positioning is done with align-items property. there are also 5 options
       will not stretch; elements with a minimum height or no height specified
       will stretch).
 
-flex-grow property allows us to specify if items should grow to fill a container
-  and also which items should grow proportionally more or less than others
-  max-width limits growth even if there is more space to absorb
-  this property is declared on flex items
-  the default value is 0, therefore they will not grow unless declared
-flex-shrink works in the same way, except it has a default value of 1.
+flex-grow | allows to specify if items should grow to fill a container and also
+  which items should grow proportionally more or less than others max-width
+  limits growth even if there is more space to absorb this property is declared
+  on flex items the default value is 0, therefore they will not grow unless declared
+flex-shrink | works in the same way, except it has a default value of 1.
 
-flex-basis allows to specify the width of an item before it stretches or shrinks
+flex-basis | allows to specify the width of an item before it stretches or shrinks
 
-flex property lets you declare flex-grow, flex-shrink and flex-basis on one
-  line.  Assign in that order.
+flex | lets you declare flex-grow, flex-shrink and flex-basis on one line.
+  Assign in that order.
     flex: 2 1 150px;
   can also assign flex-grow and flex-shrink together:
     flex: 2 1;
@@ -101,4 +99,6 @@ flex-direction | by default the major axis is horizontal and the cross axis
 
 flex-flow | like the flex property, flex-flow is used to declare both the
   flex-wrap and flex-direction properties in one line.  All available values
-  are accepted.  flex-wrap then flex-direction order of entry.
+  are accepted.  flex-direction then flex-wrap is the order of entry.
+    flex-flow: column wrap;
+    flex-flow: row-reverse nowrap;
