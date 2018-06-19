@@ -1,0 +1,15 @@
+em | Incorporating relative sizing starts by using units other than pixels. If
+the base font of a browser is 16 pixels (which is normal default size), then
+1em = 16px.  ex: font-size: 2em; (default settings this would be 32px)
+
+rem | Rem stands for root em. It acts similar to em, but instead of checking
+parent elements to size font, it checks the root element. The root element is
+the <html> tag. Can set root with the css rule - html {font-size: 20px;}
+
+Percentages can be used to size non-text elements relative to their parent
+elements. Percentages are often used to size box-model values, like width and
+height, padding, border, and margins. They can also be used to set positioning
+properties (top, bottom, left, right). When percentages are used, elements are
+sized relative to the dimensions of their parent element. Because the box model
+includes padding, borders, and margins, setting an element's width to 100% may
+cause content to overflow its parent container
