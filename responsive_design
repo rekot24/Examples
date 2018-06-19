@@ -6,10 +6,25 @@ rem | Rem stands for root em. It acts similar to em, but instead of checking
 parent elements to size font, it checks the root element. The root element is
 the <html> tag. Can set root with the css rule - html {font-size: 20px;}
 
-Percentages can be used to size non-text elements relative to their parent
-elements. Percentages are often used to size box-model values, like width and
-height, padding, border, and margins. They can also be used to set positioning
+Percentages: Height & Width. Used to size non-text elements relative to their
+parent elements. Percentages are often used to size box-model values, like width
+and height, padding, border, and margins. They can also be used to set positioning
 properties (top, bottom, left, right). When percentages are used, elements are
 sized relative to the dimensions of their parent element. Because the box model
 includes padding, borders, and margins, setting an element's width to 100% may
 cause content to overflow its parent container
+
+Percentages: Padding & Margin. When percentages are used to set padding and
+margin, they are calculated based only on the width of the parent element. When
+a property like margin-left is set using a percentage (say 50%), the element
+will be moved halfway to the right in the parent container (as opposed to the
+child element receiving a margin half of its parent's margin). Vertical padding
+and margin are also calculated based on the width of the parent.
+NOTE: When using relative sizing, ems and rems should be used to size text and
+dimensions on the page related to text size (i.e. padding around text). This
+creates a consistent layout based on text size. Otherwise, percentages should
+be used.
+
+Width & Height: Max & Min - good to use to ensure text does not become too compressed or
+very spread out and difficult to read. pixels is used to ensure hard limits on
+the dimensions of elements. min-width max-width min-height max-height
