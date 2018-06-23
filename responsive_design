@@ -1,11 +1,11 @@
 em | Incorporating relative sizing starts by using units other than pixels. If
 the base font of a browser is 16 pixels (which is normal default size), then
 1em = 16px.  ex: font-size: 2em; (default settings this would be 32px)
-
+--------------------------------------------------------------------------------
 rem | Rem stands for root em. It acts similar to em, but instead of checking
 parent elements to size font, it checks the root element. The root element is
 the <html> tag. Can set root with the css rule - html {font-size: 20px;}
-
+--------------------------------------------------------------------------------
 Percentages: Height & Width. Used to size non-text elements relative to their
 parent elements. Percentages are often used to size box-model values, like width
 and height, padding, border, and margins. They can also be used to set positioning
@@ -13,18 +13,92 @@ properties (top, bottom, left, right). When percentages are used, elements are
 sized relative to the dimensions of their parent element. Because the box model
 includes padding, borders, and margins, setting an element's width to 100% may
 cause content to overflow its parent container
-
+--------------------------------------------------------------------------------
 Percentages: Padding & Margin. When percentages are used to set padding and
 margin, they are calculated based only on the width of the parent element. When
 a property like margin-left is set using a percentage (say 50%), the element
 will be moved halfway to the right in the parent container (as opposed to the
 child element receiving a margin half of its parent's margin). Vertical padding
 and margin are also calculated based on the width of the parent.
+
 NOTE: When using relative sizing, ems and rems should be used to size text and
 dimensions on the page related to text size (i.e. padding around text). This
 creates a consistent layout based on text size. Otherwise, percentages should
 be used.
+--------------------------------------------------------------------------------
+Width & Height: Max & Min - good to use to ensure text does not become too
+compressed or very spread out and difficult to read. pixels is used to ensure
+hard limits on the dimensions of elements. min-width max-width min-height max-height
+--------------------------------------------------------------------------------
+Scaling Images and Videos : Very common design pattern example:
+.container {
+  width: 50%;
+  height: 200px;
+  overflow: hidden;
+}
+.container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+In the example above, .container represents a container div. It is set to a
+width of 50% (half of the browser's width, in this example) and a height of 200
+pixels. Setting overflow to hidden ensures that any content with dimensions
+larger than the container will be hidden from view.
 
-Width & Height: Max & Min - good to use to ensure text does not become too compressed or
-very spread out and difficult to read. pixels is used to ensure hard limits on
-the dimensions of elements. min-width max-width min-height max-height
+The second CSS rule ensures that images scale with the width of the container.
+The height property is set to auto, meaning an image's height will automatically
+scale proportionally with the width. Finally, the last line will display images
+as block level elements (rather than inline-block, their default state). This
+will prevent images from attempting to align with other content on the page
+(like text), which can add unintended margin to the images.
+
+NOTE: The example above scales the width of an image (or video) to the width of
+a container. If the image is larger than the container, the vertical portion of
+the image will overflow and will not display. To swap this behavior, you can set
+max-height to 100% and width to auto (essentially swapping the values). This
+will scale the height of the image with the height of the container instead. If
+the image is larger than the container, the horizontal portion of the image will
+overflow and not display.
+--------------------------------------------------------------------------------
+Scaling Background Images :
+body {
+  background-image: url('#');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;    <- key rule to make this change
+}
+In the example above, the first CSS declaration sets the background image (# is
+a placeholder for an image URL in this example). The second declaration instructs
+the CSS compiler to not repeat the image (by default, images will repeat). The
+third declaration centers the image within the element.
+The final declaration, however, is the focus of the example above. It's what
+scales the background image. The image will cover the entire background of the
+element, all while keeping the image in proportion. If the dimensions of the
+image exceed the dimensions of the container then only a portion of the image
+will display.
+
+--------------------------------------------------------------------------------
+
+Bullet Points:
+- Content on a website can be sized relative to other elements on the page using
+  relative measurements.
+- The unit of em sizes font relative to the font size of a parent element.
+- The unit of rem sizes font relative to the font size of a root element. That
+  root element is the <html> element.
+- Percentages are commonly used to size box-model features, like the width,
+  height, borders, padding, or margin of an element.
+- When percentages are used to size width and height, child elements will be
+  sized relative to the dimensions of their parent (remember that parent
+  dimensions must first be set).
+- Percentages can be used to set padding and margin. Horizontal and vertical
+  padding and margin are set relative to the width of a parent element.
+- The minimum and maximum width of elements can be set using min-width and
+  max-width.
+- The minimum and maximum height of elements can be set using min-height and
+  max-height.
+- When the height of an image or video is set, then its width can be set to auto
+  so that the media scales proportionally. Reversing these two properties and
+  values will also achieve the same result.
+- A background image of an HTML element will scale proportionally when its
+  background-size property is set to cover.
