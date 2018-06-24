@@ -16,5 +16,81 @@ Media Queries
   media type always used for displaying content, no matter the type of device.
   The only keyword indicates this rule only applies to one media type (screen).
 - and (max-width: 480px) | This part of the rule is called the media feature,
-  and instructs the CSS compiler to apply the CSS to relevent devices.
+  and instructs the CSS compiler to apply the CSS to relevant devices.
 - CSS rules are then nested inside curly braces
+
+--------------------------------------------------------------------------------
+
+Range
+  Specific screen sizes can be targeted by setting multiple width and height
+  media features. By using multiple widths and heights, a range can be set for
+  a media query. examples:
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    /* ruleset for 320px - 480px */
+}
+
+@media only screen and (min-width: 320px) {
+    /* ruleset for 320px - 479px */
+}
+
+@media only screen and (min-width: 480px) {
+    /* ruleset for > 480px */
+}
+
+--------------------------------------------------------------------------------
+
+Dots Per Inch (DPI)
+  Many times we will want to supply higher quality media (images, video, etc.)
+  only to users with screens that can support high resolution media. To target
+  by resolution, we can use the min-resolution and max-resolution media features.
+
+@media only screen and (min-resolution: 300dpi) {
+    /* CSS for high resolution screens */
+}
+
+--------------------------------------------------------------------------------
+
+And Operator
+  Can be used to chain any of the above together to target specific screens.
+
+Comma Separated List
+  Used like an Or operator, activates if any of the parameters are met
+
+@media only screen and (min-width: 480px), (orientation: landscape) {
+    /* CSS ruleset */
+}
+
+--------------------------------------------------------------------------------
+
+Breakpoints
+  The points at which media queries are set are called breakpoints. Breakpoints
+  are the screen sizes at which your web page does not appear properly. Rather
+  than set breakpoints based on specific devices, the best practice is to resize
+  your browser to view where the website naturally breaks based on its content.
+  The dimensions at which the layout breaks or looks odd become your media query
+  breakpoints. Within those breakpoints, we can adjust the CSS to make the page
+  resize and reorganize.
+  By observing the dimensions at which a website naturally breaks, you can set
+  media query breakpoints that create the best possible user experience on a
+  project by project basis, rather than forcing every project to fit a certain
+  screen size. Different projects have different needs, and creating a responsive
+  design should be no different.
+  Breakpoints reference link in Resources bookmarks
+
+--------------------------------------------------------------------------------
+
+Bullet Points
+- When a website responds to the size of the screen it's viewed on, it’s called
+  a responsive website.
+- You can write media queries to help with different screen sizes.
+- Media queries require media features. Media features are the conditions that
+  must be met to render the CSS within a media query.
+- Media features can detect many aspects of a user's browser, including the
+  screen's width, height, resolution, orientation, and more.
+- The and operator requires multiple media features to be true at once.
+- A comma separated list of media features only requires one media feature to be
+  true for the code within to be applied.
+- The best practice for identifying where media queries should be set is by
+  resizing the browser to determine where the content naturally breaks. Natural
+  breakpoints are found by resizing the browser.

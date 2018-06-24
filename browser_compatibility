@@ -1,0 +1,36 @@
+All browsers have a default set of CSS rules that they apply to HTML. The default
+CSS rules live in a stylesheet specific to the browser. The stylesheet is known
+as a user agent style sheet.
+
+Resetting User Agent Stylesheets
+
+1 - Create a reset.css file.
+2 - Copy and paste CSS reset rules into the reset.css file.
+3 - Link to reset.css in the HTML file (make sure reset.css is loaded first before
+    other CSS files, otherwise reset.css may reset your custom rules by accident).
+A popular CSS reset:
+https://meyerweb.com/eric/tools/css/reset/
+
+--------------------------------------------------------------------------------
+
+Browser support
+To avoid inconsistencies across browsers when creating a website, developers
+must ensure that newer HTML or CSS features are supported in each browser.
+The following resource is an up-to-date record of CSS properties across many
+versions of many browsers:
+https://caniuse.com/
+Bookmarked in the resources tab
+
+--------------------------------------------------------------------------------
+
+Global Support vs Unprefixed Support
+every browser has its own implementation of many newer CSS rules. To distinguish
+their own implementation, browsers add a prefix to the CSS property. The prefix
+is known as a vendor prefix. For example, the -moz vendor prefix refers to Mozilla
+Firefox's implementation.
+To identify exactly which CSS properties need vendor prefixes, you can use tools
+like this one: http://pleeease.io/play/
+
+--------------------------------------------------------------------------------
+
+Polyfills
