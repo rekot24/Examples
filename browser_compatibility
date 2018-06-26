@@ -34,3 +34,57 @@ like this one: http://pleeease.io/play/
 --------------------------------------------------------------------------------
 
 Polyfills
+Libraries created to help support users with old browsers
+How they work:
+Detect the user's browser >
+collect information about which features are supported by the browser >
+return the collected information to your website
+
+The collected information allows you to write alternative CSS for browsers that
+are missing certain features. Your website may not look as visually appealing
+as it would on a newer browser, but it will function.
+
+One example of a polyfill is Modernizr. To use Modernizr:
+1 - https://modernizr.com/ > Download
+2 - Click the + next to any features you want to Polyfill
+3 - Click "build"
+4 - Click "Download" next to the "Build" option in the resulting pop-up. This
+    will prompt you to download a JavaScript file (the polyfill code).
+5 - Place the downloaded .js file (JavaScript file) into the corresponding
+    folder in your website's directory.
+6 - Link the JavaScript file using a <source> tag in your index.html file.
+7 - Use CSS to target elements that have the detected feature using .feature-name.
+    To target elements that don't have the detected feature use .no-feature-name.
+    The code feature-name is intended to represent the actual CSS feature.
+An example of alternative CSS rules from the Modernizr documentation:
+
+/* Use this rule if the user's browser doesn't support gradients */
+.no-cssgradients .header {
+  background: url("images/glossybutton.png");
+}
+/* Use this rule if the user's browser does support gradients */
+.cssgradients .header {
+  background-image: linear-gradient(cornflowerblue, rebeccapurple);
+}
+
+--------------------------------------------------------------------------------
+
+Bullet Points:
+- A website may not look the same in all browsers (or versions of browsers) due
+  to differing user agent stylesheets across browsers.
+- User agent stylesheets can be reset with a CSS reset stylesheet.
+- A CSS reset stylesheet can be linked in an HTML file.
+- Resources like "Can I use" allow you to check if a CSS feature is supported
+  across multiple browsers.
+- Vendor prefixes increase the browser compatibility of CSS features. This is
+  because they indicate to browsers how the rule should be specifically
+  implemented.
+- Polyfills are libraries that increase the browser compatibility of a website.
+  They allow developers to write alternative CSS rules based on whether or not 
+  a browser supports a certain feature.
+
+Users have the option of selecting from a multitude of browsers and browser
+versions. Because of this, it's important to create websites that are compatible
+across a wide array of browsers. Increasing your website's browser compatibility
+is not only good practice, it also increases your website's accessibility to the
+potential billions of users around the globe.
