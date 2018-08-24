@@ -1,0 +1,33 @@
+Functions
+- A function is a block of code designed to perform a task.
+- Functions take data, perform a set of tasks on the data, and then return
+  the result.
+- We can define parameters to be used when calling the function.
+- When calling a function, we can pass in arguments, which will set the
+  function's parameters.
+- We can use return to return the result of a function which allows us to call
+  functions anywhere, even inside other functions.
+
+--------------------------------------------------------------------------------
+Example of Arrow Function Syntax:
+const getAverage = (numberOne, numberTwo) => {
+  const average = (numberOne + numberTwo) / 2;
+  return average;
+};
+
+Call the function and log to console with:
+console.log(getAverage(365, 27));
+
+NOTE - numberOne & numberTwo are parameters.  365 & 277 are arguments
+
+Using functions together:
+const multiplyByNineFifths = (celsius) => {
+  return celsius * (9/5);
+};
+
+const getFahrenheit = (celsius) => {
+  return multiplyByNineFifths(celsius) + 32;
+};
+
+console.log('The temperature is ' + getFahrenheit(15) + '°F');
+// Output: The temperature is 59°F

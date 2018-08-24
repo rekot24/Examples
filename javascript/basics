@@ -1,0 +1,100 @@
+Types and Operators
+- Four essential data types in JavaScript include strings, numbers, booleans,
+  and null. These data types have built in methods.
+- Data is printed, or logged, to the console with console.log().
+- Four built-in mathematical operators include +, -, *, and /.
+- JavaScript associates certain properties with different data types.
+- Libraries are collections of methods that can be called without an instance.
+- You can write single-line comments with // and multi-line comments between /*
+  and */.
+
+Common random number generator:
+Math.floor(Math.random() * 100); // change 100 to whatever number is required
+
+--------------------------------------------------------------------------------
+Variables
+const - keyword that creates a new variable with a value that cannot change.
+let - keyword that creates a new variable that can be changed
+- When you create a variable but don't assign it a value, JavaScript sets it to
+  undefined. Undefined is the fifth and final primitive data type
+
+Mathematical Assignment operators
+  += -= *=  Each operation calculates then assigns new value to the Variables
+  ++ -- Increment or decrement the value by none
+
+--------------------------------------------------------------------------------
+String Interpolation
+  The + operator is used to interpolate (insert) a string variable into a
+  string, as follows:
+let myPet = 'armadillo';
+console.log('I own a pet ' + myPet + '.');  // Output: 'I own a pet armadillo.'
+
+String Interpolation II
+  In the newest version of JavaScript (ES6) we can insert variables into strings
+  with ease, by doing two things:
+  - Instead of using quotes around the string, use backticks (this key is
+    usually located on the top of your keyboard, left of the 1 key).
+  - Wrap your variable with ${myVariable}, followed by a sentence.
+    No +s necessary.
+let myPet = 'armadillo'
+console.log(`I own a pet ${myPet}.`)  // Output: 'I own a pet armadillo.'
+
+--------------------------------------------------------------------------------
+Control Flow
+- if/else statements make binary decisions and execute different code based on
+  conditions.
+let isSoccerFan = false;
+if (isSoccerFan) {
+  console.log('Goal!');
+} else {
+  console.log('No Goal!');
+}
+
+- All conditions are evaluated to be truthy or falsy.
+  - All variables that have been declared and assigned are truthy unless they
+    contain one of the six values listed below:
+    false, 0 and -0, "" and '' (empty strings), null, undefined, NaN (Not a Number)
+
+- We can add more conditional statements to if/else statements with else if.
+
+- switch statements make complicated if/else statements easier to read and
+  achieve the same result. Example:
+let moonPhase = 'full';
+switch (moonPhase) {
+  case 'full':
+  	console.log('Howl!');
+    break;
+  case 'mostly full':
+  	console.log('Arms and legs are getting hairier');
+    break;
+  case 'mostly new':
+    console.log('Back on two feet');
+    break;
+  default:
+  	console.log('Invalid moon phase');
+  	break;
+}
+
+- The ternary operator (?) and a colon (:) allow us to refactor simple
+  if/else statements. Above isSoccerFan example refactored:
+isSoccerFan ? console.log('Goal!') : console.log('No Goal!');
+
+- Comparison operators, including <, >, <=, and >= can compare two variables
+  or values.
+
+- After two values are compared, the conditional statement evaluates to
+  true or false.
+
+- The logical operator && checks if both sides of a condition are truthy.
+
+- The logical operator || checks if either side is truthy. Or equivalent
+
+- The logical operator !== checks if the two sides are not equal.
+
+- An exclamation mark (!) switches the truthiness / falsiness of the value of
+  a variable.
+
+- One equals symbol (=) is used to assign a value to a variable.
+
+- Three equals symbols (===) are used to check if two variables are equal to
+  each other.
